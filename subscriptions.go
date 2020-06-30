@@ -29,7 +29,7 @@ type SubscribeToFormRequest struct {
 	// Optional
 	FirstName string            `json:"first_name,omitempty"`
 	Fields    map[string]string `json:"fields,omitempty"`
-	TagIDs    []string          `json:"tags,omitempty"`
+	TagIDs    []int             `json:"tags,omitempty"`
 }
 
 // SubscribeToFormResponse is the response data from SubscribeToForm.
@@ -82,7 +82,7 @@ type SubscribeToSequenceRequest struct {
 	// Optional
 	FirstName string            `json:"first_name,omitempty"`
 	Fields    map[string]string `json:"fields,omitempty"`
-	TagIDs    []string          `json:"tags,omitempty"`
+	TagIDs    []int             `json:"tags,omitempty"`
 }
 
 // SubscribeToSequenceResponse is the response data from SubscribeToSequence.
@@ -136,7 +136,7 @@ type TagSubscriberRequest struct {
 	FirstName string            `json:"first_name,omitempty"`
 	Fields    map[string]string `json:"fields,omitempty"`
 	// Additional TagIDs you wish to apply to the user.
-	TagIDs []string `json:"tags,omitempty"`
+	TagIDs []int `json:"tags,omitempty"`
 }
 
 // TagSubscriberResponse is the response data from TagSubscriber.
