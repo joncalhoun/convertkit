@@ -1,0 +1,14 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "My First Sequence",
+      "created_at": "2016-02-28T08:07:00Z"
+    },
+    {
+      "id": 2,
+      "name": "My Second Sequence",
+      "created_at": "2016-02-28T08:07:00Z"
+    }
+  ]
+}
