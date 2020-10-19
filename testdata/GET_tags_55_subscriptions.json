@@ -1,0 +1,45 @@
+{
+	"total_subscriptions": 2,
+	"page": 1,
+	"total_pages": 1,
+	"subscriptions": [
+		{
+			"id": 1,
+			"state": "active",
+			"created_at": "2016-02-28T08:07:00Z",
+			"source": null,
+			"referrer": null,
+			"subscribable_id": 1,
+			"subscribable_type": "tag",
+			"subscriber": {
+				"id": 1,
+				"first_name": "Jon",
+				"email_address": "jonsnow@example.com",
+				"state": "active",
+				"created_at": "2016-02-28T08:07:00Z",
+				"fields": {
+					"last_name": "Snow"
+				}
+			}
+		},
+		{
+			"id": 2,
+			"state": "active",
+			"created_at": "2016-02-27T08:07:00Z",
+			"source": null,
+			"referrer": null,
+			"subscribable_id": 1,
+			"subscribable_type": "tag",
+			"subscriber": {
+				"id": 2,
+				"first_name": "Arya",
+				"email_address": "arya@example.com",
+				"state": "active",
+				"created_at": "2016-02-27T08:07:00Z",
+				"fields": {
+					"last_name": "Stark"
+				}
+			}
+		}
+	]
+}

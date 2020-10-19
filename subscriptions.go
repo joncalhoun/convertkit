@@ -127,6 +127,33 @@ func (c *Client) SequenceSubscriptions(req SequenceSubscriptionsRequest) (*Seque
 	return &ret, nil
 }
 
+// TagSubscriptionsRequest is used when making TagSubscriptions calls.
+type TagSubscriptionsRequest struct {
+	// Required
+	TagID int `json:"-"`
+	// Optional
+	SortOrder       SortOrder       `json:"sort_order,omitempty"`
+	SubscriberState SubscriberState `json:"subscriber_state,omitempty"`
+}
+
+// TagSubscriptionsResponse is the response data from TagSubscriptions.
+type TagSubscriptionsResponse struct {
+	TotalSubscriptions int            `json:"total_subscriptions"`
+	Page               int            `json:"page"`
+	TotalPages         int            `json:"total_pages"`
+	Subscriptions      []Subscription `json:"subscriptions"`
+}
+
+// TagSubscriptions will subscribe an email address to a form.
+func (c *Client) TagSubscriptions(req TagSubscriptionsRequest) (*TagSubscriptionsResponse, error) {
+	var ret TagSubscriptionsResponse
+	err := c.Do(http.MethodGet, fmt.Sprintf("tags/%v/subscriptions", req.TagID), req, &ret)
+	if err != nil {
+		return nil, err
+	}
+	return &ret, nil
+}
+
 // TagSubscriberRequest is used when making TagSubscriber calls.
 type TagSubscriberRequest struct {
 	// Required

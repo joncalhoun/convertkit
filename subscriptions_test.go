@@ -70,6 +70,21 @@ func TestClient_SequenceSubscriptions(t *testing.T) {
 	})
 }
 
+func TestClient_TagSubscriptions(t *testing.T) {
+	c := client(t, "fake-secret-key")
+	t.Run("basic check", func(t *testing.T) {
+		resp, err := c.TagSubscriptions(convertkit.TagSubscriptionsRequest{
+			TagID: 55,
+		})
+		if err != nil {
+			t.Fatalf("TagSubscriptions() err = %v; want %v", err, nil)
+		}
+		if resp.Subscriptions[1].Subscriber.ID != 2 {
+			t.Errorf("resp.Subscriptions[1].Subscriber.ID = %v; want 2", resp.Subscriptions[1].Subscriber.ID)
+		}
+	})
+}
+
 func TestClient_TagSubscriberSequence(t *testing.T) {
 	c := client(t, "fake-secret-key")
 	t.Run("basic check", func(t *testing.T) {
