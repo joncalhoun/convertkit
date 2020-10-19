@@ -134,6 +134,7 @@ type TagSubscriptionsRequest struct {
 	// Optional
 	SortOrder       SortOrder       `json:"sort_order,omitempty"`
 	SubscriberState SubscriberState `json:"subscriber_state,omitempty"`
+	Page            int             `json:"page,omitempty"`
 }
 
 // TagSubscriptionsResponse is the response data from TagSubscriptions.
